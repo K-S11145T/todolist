@@ -56,18 +56,18 @@ const ToDo = () => {
                 className="rounded-full w-[60px] bg-zinc-300 h-[60px] object-cover shadow-lg ring-4 ring-green-500/80"
               />
               <div className="absolute -bottom-1 -right-1 bg-green-500 w-6 h-6 rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
             </div>
             <div className="flex flex-col">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+              <h2 className="text-lg font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
                 Hey, {user}
               </h2>
               <p className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>Welcome back!</p>
             </div>
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className={`ml-auto w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+              className={`ml-auto w-4 h-4 p-4 rounded-full flex items-center justify-center transition-all ${
                 isDarkMode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300"
               }`}
             >
@@ -145,7 +145,7 @@ const ToDo = () => {
         <div className={`p-6 rounded-xl shadow-lg mb-8 ${isDarkMode ? "bg-gray-800/50" : "bg-white"} backdrop-blur-md`}>
           <TaskInput />
         </div>
-        <TaskList filter={filter} filteredTasks={filteredTasks} />
+        <TaskList filter={filter} isDarkMode={isDarkMode} filteredTasks={filteredTasks} />
       </main>
     </div>
   );

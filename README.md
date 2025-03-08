@@ -80,10 +80,13 @@ vercel
 
 ## 📸 Screenshots
 Include screenshots of your app's key features, like:
-- **Login Page**
-- **To-Do List**
-- **Weather Widget**
-- **Dark Mode Toggle**
+
+### Login Page
+![Login Page](public/Login.png)
+### To-Do List
+![To-Do List](public/Page.png)
+### Light Theme
+![Light Theme](public/Light.png)
 
 ## 🧪 Testing
 Ensure all functionalities work correctly:
