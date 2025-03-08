@@ -6,12 +6,11 @@ import TaskList from "../components/TaskList";
 import Logout from "../pages/Logout";
 
 const ToDo = () => {
-  const [task, setTask] = useState("");
   const dispatch = useDispatch();
   const weather = useSelector((state) => state.tasks.weather);
   const error = useSelector((state) => state.tasks.error);
   const [city, setCity] = useState("Delhi");
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
 
   useEffect(() => {
     dispatch(fetchWeather(city));
@@ -35,28 +34,7 @@ const ToDo = () => {
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   }, [isDarkMode]);
 
-  const handleDeleteAllTasks = () => {
-    if (window.confirm("Are you sure you want to delete all tasks?")) {
-      dispatch(deleteAllTasks());
-    }
-  };
 
-  const handleAddTask = () => {
-    if (task.trim() !== "") {
-      dispatch(addTask({ id: Date.now(), text: task, priority: "low" }));
-      setTask("");
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleAddTask();
-    }
-  };
-
-  const handlePriorityChange = (task, priority) => {
-    dispatch(updateTask({ ...task, priority }));
-  };
 
   const filteredTasks = tasks.filter((task) => {
     if (filter === "all") return true;
@@ -75,7 +53,7 @@ const ToDo = () => {
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
                 alt="Profile"
-                className="rounded-full w-[70px] bg-zinc-300 h-[70px] object-cover shadow-lg ring-4 ring-green-500/80"
+                className="rounded-full w-[60px] bg-zinc-300 h-[60px] object-cover shadow-lg ring-4 ring-green-500/80"
               />
               <div className="absolute -bottom-1 -right-1 bg-green-500 w-6 h-6 rounded-full flex items-center justify-center">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
